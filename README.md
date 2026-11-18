@@ -3,6 +3,8 @@ JugglerHelper
 
 A King Of The Bridge mod to help track progress on Juggler achievement by highlighting the last-moved piece and notifying in the log when Juggler is lost
 
+<img width="590" height="610" alt="image" src="https://github.com/user-attachments/assets/8a156bbd-5aa1-49b2-ae05-9973e9317b8d" />
+
 Installation
 ------------
 
