@@ -2,7 +2,7 @@
 using MelonLoader;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(JugglerHelper.Core), "JugglerHelper", "1.0.0", "alydev", null)]
+[assembly: MelonInfo(typeof(JugglerHelper.Core), "JugglerHelper", "1.0.1", "alydev", null)]
 [assembly: MelonGame("Finn Schuuring", "King of the Bridge")]
 
 namespace JugglerHelper;
@@ -24,9 +24,7 @@ public class Core : MelonMod
 
         public static void Postfix(ChessMatchManager __instance)
         {
-            ChessPieceObject piece = __instance.lastTurnMovedChessPiece;
-            if (piece.pieceColor is not ChessMatchManager.ChessColor.White)
-                return;
+            ChessPieceObject piece = __instance.lastMovedPieceByWhite;
 
             bool isJuggler = __instance.isJuggler;
 
