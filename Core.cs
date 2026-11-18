@@ -2,7 +2,7 @@
 using MelonLoader;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(JugglerHelper.Core), "JugglerHelper", "1.0.1", "alydev", null)]
+[assembly: MelonInfo(typeof(JugglerHelper.Core), "JugglerHelper", "1.0.2", "alydev", null)]
 [assembly: MelonGame("Finn Schuuring", "King of the Bridge")]
 
 namespace JugglerHelper;
@@ -38,7 +38,7 @@ public class Core : MelonMod
                 _lastIsJuggler = isJuggler;
                 if (!isJuggler)
                 {
-                    Melon<Core>.Logger.Warning($"Lost juggler after {__instance.juggleCounter} by moving {piece.pieceData.name}");
+                    Melon<Core>.Logger.Warning($"Lost juggler after {__instance.juggleCounter} by moving {piece.pieceColor} {piece.pieceData.name}");
                     ClearTint();
                 }
             }
@@ -78,6 +78,7 @@ public class Core : MelonMod
     {
         public static void Postfix()
         {
+            Melon<Core>.Logger.Msg("Resetting.");
             CompleteMoveWatcher.Reset();
         }
     }
